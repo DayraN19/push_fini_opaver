@@ -1,35 +1,29 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   index_stack.c                                      :+:      :+:    :+:   */
+/*   third_utils.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: bgranier <bgranier@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2026/01/20 12:55:47 by bgranier          #+#    #+#             */
-/*   Updated: 2026/01/20 12:56:15 by bgranier         ###   ########.fr       */
+/*   Created: 2026/01/20 13:30:08 by bgranier          #+#    #+#             */
+/*   Updated: 2026/01/30 15:56:56 by bgranier         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-void	index_stack(t_stack_node *a)
+int	handle_bench(t_ctrl *c, int argc, char **argv)
 {
-	t_stack_node	*i;
-	t_stack_node	*j;
-	int				index;
+	int	start;
 
-	i = a;
-	while (i)
+	c->bench = 0;
+	start = 1;
+	if (!ft_strcmp(argv[1], "--bench"))
 	{
-		index = 0;
-		j = a;
-		while (j)
-		{
-			if (j->value < i->value)
-				index++;
-			j = j->next;
-		}
-		i->index = index;
-		i = i->next;
+		c->bench = 1;
+		start = 2;
 	}
+	while (start < argc && is_flag(argv[start]))
+		start++;
+	return (start);
 }

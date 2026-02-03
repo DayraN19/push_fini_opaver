@@ -6,11 +6,11 @@
 /*   By: bgranier <bgranier@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/12/15 14:17:02 by bgranier          #+#    #+#             */
-/*   Updated: 2026/01/06 12:05:58 by bgranier         ###   ########.fr       */
+/*   Updated: 2026/01/20 12:57:23 by bgranier         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-# include "push_swap.h"
+#include "push_swap.h"
 
 t_stack_node	*new_node(int value)
 {

@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ctrl_init.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: bastiangranier <bastiangranier@student.    +#+  +:+       +#+        */
+/*   By: bgranier <bgranier@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/01/07 14:08:44 by bgranier          #+#    #+#             */
-/*   Updated: 2026/01/16 14:36:25 by bastiangran      ###   ########.fr       */
+/*   Updated: 2026/01/20 12:50:30 by bgranier         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,5 +35,3 @@ void	ctrl_init(t_ctrl *c, t_stack_node *a, t_stack_node *b)
 	c->first = NULL;
 	c->last = NULL;
 }
-
-

@@ -3,10 +3,10 @@
 #                                                         :::      ::::::::    #
 #    Makefile                                           :+:      :+:    :+:    #
 #                                                     +:+ +:+         +:+      #
-#    By: bastiangranier <bastiangranier@student.    +#+  +:+       +#+         #
+#    By: bgranier <bgranier@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2025/12/05 13:00:48 by bgranier          #+#    #+#              #
-#    Updated: 2026/01/19 12:57:05 by bastiangran      ###   ########.fr        #
+#    Updated: 2026/02/03 10:55:12 by bgranier         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -24,9 +24,14 @@ SRC = push_swap.c \
 	flag_utils.c \
 	med_utils.c \
 	sort_adaptive.c \
+	seg_utils.c \
+	sort_three.c \
+	sort_five.c \
 	sort_medium.c \
 	dispatch_sort.c \
 	sort_complex.c \
+	rotate.c \
+	third_utils.c \
 	index_stack.c \
 	new_node.c \
 	stack_utils.c \
@@ -34,7 +39,6 @@ SRC = push_swap.c \
 	sorted.c \
 	bench.c \
 	ctrl_init.c \
-	bench_utils.c \
 	strategy.c \
 
 OBJ = $(SRC:.c=.o)

@@ -1,33 +1,42 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   sort_medium.c                                      :+:      :+:    :+:   */
+/*   sort_three.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: bgranier <bgranier@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2026/01/06 15:54:28 by bgranier          #+#    #+#             */
-/*   Updated: 2026/01/20 13:24:23 by bgranier         ###   ########.fr       */
+/*   Created: 2026/01/30 15:41:56 by bgranier          #+#    #+#             */
+/*   Updated: 2026/02/03 10:11:52 by bgranier         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-void	sort_medium(t_stack_node **a, t_stack_node **b, t_ctrl *c)
+void	sort_three(t_stack_node **a, t_ctrl *c)
 {
-	int	size;
-	int	chunk;
+	int	f;
+	int	s;
+	int	t;
 
-	if (!a || !*a)
+	if (!a || !*a || !(*a)->next || !(*a)->next->next)
 		return ;
-	size = stack_size(*a);
-	if (size <= 5)
+	f = (*a)->index;
+	s = (*a)->next->index;
+	t = (*a)->next->next->index;
+	if (f > s && s < t && f < t)
+		sa(a, c);
+	else if (f > s && s > t)
 	{
-		sort_simple(a, b, c);
-		return ;
+		sa(a, c);
+		rra(a, c);
 	}
-	chunk = get_chunk_size(size);
-	push_chunks(a, b, c, chunk);
-	push_back(a, b, c);
-	c->size_a = stack_size(*a);
-	c->size_b = stack_size(*b);
+	else if (f > s && s < t && f > t)
+		ra(a, c);
+	else if (f < s && s > t && f < t)
+	{
+		sa(a, c);
+		ra(a, c);
+	}
+	else if (f < s && s > t && f > t)
+		rra(a, c);
 }
